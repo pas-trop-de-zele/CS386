@@ -51,7 +51,11 @@ class Game:
             # self.circles.update()
             pg.display.update()
             time.sleep(0.02)
-
+            print(Boxes.n_boxes)
+            Boxes.n_boxes += 1
+            if Boxes.n_boxes > 40:
+                Boxes.n_boxes = 0
+                self.boxes.add_random_box(color=GREEN, width=20, height=20, max_velocity=3, game=self)
 
 def main():
     g = Game()
